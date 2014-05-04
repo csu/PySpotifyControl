@@ -11,8 +11,10 @@ scripts = {
     "next": 'tell application "Spotify" to next track',
     "previous": 'tell application "Spotify" to previous track',
     "jumpTo": 'tell application "Spotify" to set player position to %s',
-    "getSongId": 'tell application "Spotify"\nset cstate to current track\'s id\nend tell',
-    "getSongDuration": 'tell application "Spotify"\nset cstate to current track\'s duration\nend tell'
+    "getSongId": 'tell application "Spotify" to current track\'s id',
+    "getSongDuration": 'tell application "Spotify"  to current track\'s duration',
+    "getSongName": 'tell application "Spotify"  to current track\'s name',
+    "getSongArtist": 'tell application "Spotify"  to current track\'s artist'
 }
 
 def run(ascript):
@@ -21,6 +23,12 @@ def run(ascript):
 
 def getSongId():
     return run(scripts["getSongId"]).rstrip()
+
+def getSongName():
+    return run(scripts["getSongName"]).rstrip()
+
+def getSongArtist():
+    return run(scripts["getSongArtist"]).rstrip()
 
 def getSongDuration():
     return int(run(scripts["getSongDuration"]).rstrip())
